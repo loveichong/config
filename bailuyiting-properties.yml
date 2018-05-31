@@ -28,10 +28,10 @@ spring:
 #    port: 6379
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://47.106.177.107:3306/text?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://rm-wz9s0tbc589pswp6r.mysql.rds.aliyuncs.com:3306/text?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 18650810243 
+    username: bailuyiting
+    password: blyt-66668888 
     platform: mysql
     initialSize: 5
     minIdle: 5
