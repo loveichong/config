@@ -67,6 +67,11 @@ module:
             appSecret: 735dea3575a1b49676447596f815f393
             spBillCreateIp: 192.168.1.113
             notifyIp: http://47.106.177.107/sso
+            
+           
+           
+ bailuyiting:
+          accessTokenURL: http://47.106.177.107/sso/oauth/token
 
 
 
