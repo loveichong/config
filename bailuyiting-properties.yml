@@ -46,9 +46,6 @@ spring:
     filters: stat,wall,log4j
     logSlowSql: true
   jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
     database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: true
   http:
