@@ -90,7 +90,7 @@ module:
          refreshTokenURL: https://api.netease.im/nimserver/user/refreshToken.action
          getURL: https://api.netease.im/nimserver/user/getUinfos.action
          updateUinfoURL: https://api.netease.im/nimserver/user/updateUinfo.action
-            
+
            
            
 bailuyiting:
