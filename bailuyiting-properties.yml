@@ -82,7 +82,14 @@ module:
          appKey: 6b9d39c17d861c1ad17d6f56
          masterSecret: d04a7cc37d05fccc58cec1da
          
-
+     WyIm:
+         appKey: a94297f610e1fef47c757cabc4025af6
+         appSecret: 7e2e5e6a9214
+         registerURL: https://api.netease.im/nimserver/user/create.action
+         updateURL: https://api.netease.im/nimserver/user/update.action
+         refreshTokenURL: https://api.netease.im/nimserver/user/refreshToken.action
+         getURL: https://api.netease.im/nimserver/user/getUinfos.action
+         updateUinfoURL: https://api.netease.im/nimserver/user/updateUinfo.action
             
            
            
