@@ -67,8 +67,8 @@ module:
             notifyIp: http://20b8052g92.iask.in:43200/sso
             certificateURI: D:/wechat/cert/apiclient_cert.p12
           mini:
-            appID: wx001c84e3095353a9
-            appSecret: de2004dc1f33378990ceda495dd16fc3
+            appID: wx2bad3dcfd9ae86d3
+            appSecret: da9a695c2226417cf22a5d7f26af5d43
 
 
     alipay:
