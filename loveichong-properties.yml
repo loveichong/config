@@ -17,7 +17,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://www.bailuyiting.com:18650810243@localhost:8761/eureka/
+      defaultZone: http://www.bailuyiting.com:18650810243@47.106.177.107:8761/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
