@@ -30,8 +30,8 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://bailuyiting.mysql.rds.aliyuncs.com:3306/loveichong?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 18650810243 
+    username: bailuyiting
+    password: blyt-66668888
     platform: mysql
     initialSize: 5
     minIdle: 5
@@ -46,7 +46,6 @@ spring:
     filters: stat,wall,log4j
     logSlowSql: true
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -56,10 +55,6 @@ spring:
       charset: UTF-8
       force: true
       enabled: true
-
-      
-      
-      
 ##################################################自定义配置###############################################
 module:
     weChat:
