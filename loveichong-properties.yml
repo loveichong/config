@@ -98,7 +98,7 @@ module:
 
 
 loveichong:
-          accessTokenURL: http://localhost/sso/oauth/token
+          accessTokenURL: http://47.106.177.107/sso/oauth/token
 
 
 
