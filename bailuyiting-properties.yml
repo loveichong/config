@@ -69,7 +69,7 @@ module:
             appSecret: 735dea3575a1b49676447596f815f393
             spBillCreateIp: 192.168.1.113
             notifyIp: http://47.106.177.107/sso
-            certificateURI: D:/wechat/cert/apiclient_cert.p12
+            certificateURI: /usr/local/weChat/cert/apiclient_cert.p12
             
     alipay:
           appID: 2018060560296716
