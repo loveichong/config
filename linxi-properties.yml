@@ -1,0 +1,116 @@
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  undertow:
+    accesslog:
+      dir: ./logs
+      enabled: false
+      pattern: common
+      prefix: access_log
+      rotate: true
+      suffix: log
+
+logging:
+  config: classpath:logback.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.linxi.com:18650810243@47.106.177.107:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+spring:
+#  redis:
+#    host: www.loveichong.com
+#    port: 6379
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://bailuyiting.mysql.rds.aliyuncs.com:3306/linxi?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: bailuyiting
+    password: blyt-66668888 
+    platform: mysql
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: true
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+      
+      
+      
+##################################################自定义配置###############################################
+module:
+    weChat:
+          pay:
+            mchID: 1499410362
+            key: baiLUTingChe1581AQWE1917plmokATY
+            appID: wx24151ca066138e3f
+            appSecret: 735dea3575a1b49676447596f815f393
+            spBillCreateIp: 192.168.1.113
+            notifyIp: http://47.106.177.107/
+            certificateURI: /usr/local/weChat/cert/apiclient_cert.p12
+            
+    alipay:
+          appID: 2018060560296716
+          privateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCbeKCTkTN4Liu2cuBZiJRknsiOwIDiwzlj3Ar+OrCv0WZearM8Dk/XE7G352TBj4yqMdE6VkGIONdsNVTs5TXcvEl4zeBPhyrEWU75LwJrKJHLM6iuvZVGcM4hDj612ngYG/uGAdNr5otqzSPmf6BcNAcTtibpP6jaAIGPHmRcCnpsUph0Gj7S5wro+BfXcP9H6B3zVE7QJLHo2pBWdY3dP5jkPIQu5BE6onU+hlpvjV3IFI1hdDkdEgM/TI29FUDUagerQjXHwhYpkTDOs+pmXsZamOx4LIa9XrdCD7mgb35NRBPoF2XcKtB64Q0MKZsPEo1V+hSBB2jfqDQm60E7AgMBAAECggEAdfCIP+nClcTQvFNhBgqqJ7qcgk5ed6eJfcuLO1jieD3t3morFb/1qT7zboNG199B4kpwYkTU6bXVFe1PQ3aN6amcQtxK8YmkU9c8JaQXvZrFHtVNfWGsQAeLF2BrCiF1QTTZFcuEyzHVSWvddBoVWFzPkZB47DCyss33es6fa4H/l01AjtdE622WQuje+5rgMv9wQjj+xnvsc0h6v3ypayv2wrppRtndkM1eyi3BaqlSGJXq1enDoVsq4MdClQvYkcPu4KllrchpHOwfdR+oQLW/VAEtjv2sI0By1gN2oE4ug1BScaTsN0e0VT5oQrkFAJ9KEwzqt/ZIwZfV3LztgQKBgQD+2MDdILFJyUkhOtkBlfQUM4JCiequR//1vSnFMzwNTimyR4WAcR65TGK22KPihGHu2qVkShzhFE2S08K6zsczXCWvk6WjNtxCX9F527XLrSYPkCK5m7qJqJIfjr/aYU9jWm2Vop8xsOg1tlwYS1luurgWIyRptKLwHD5QE4jJqwKBgQCcLL6njV7tfDSiBUrYhjCgxtTbq8UICMyLUZWTDVqI++RwADaCjOtSerSSbPzgODrA6g5mGa+n5LAGvLiAAX0hB1TBsKAP3Jn+r0vFsLIMWV+Z19OZFUa9SaCgutayWKlZXtAzvcejBVyz8/Crq1LsnVO3bbS+fA8dNdjz5Cl2sQKBgBdf1Bi0Fe65mo6EskC1+0QbEVh/A9pmWjC03+7paxmhUKu8aZ9FQNcoDWnN5wIwuDbLMR5IuetfDFpqN9Mggh7Q1dgLx8Z3kq430aPGph7/S51jz/uMMAjOQFDKrAggosJvGdv+pXFOU44RotLLnnFMiPPm10Emw0cYoBKCKCqvAoGAQ0xgx/D6lBnu0Fa5fv6sW8vyk8q8OA8anXqFmv2pIthxAvaEhtNU4JDx2RtQCQsR/mmd1M+CyzWXyP9v/fEmS6JOGr0S7GLilUZSv5i50Op+cNv5WcE6X30n07tPo0DjkRhzXaiNK6m23fDjqAZG0KGnHqcOuPraxHqcx9RtLbECgYEA8awd15G3iV+9udf9tOcbtTZjPqyFf9zpUJmYdnLJqdGUWVZZdB81TmARqLgdcQG0o24uAVIh2U+zNQQM7ONcWCddgYgcr+gHeyatmYCjRICBsLum2voGXD7xJtWbHDURXz0bLBH8lTNIgu/AKpNBr/nWoDojitbEbzTSnmWOqUE=
+          publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm3igk5EzeC4rtnLgWYiUZJ7IjsCA4sM5Y9wK/jqwr9FmXmqzPA5P1xOxt+dkwY+MqjHROlZBiDjXbDVU7OU13LxJeM3gT4cqxFlO+S8CayiRyzOorr2VRnDOIQ4+tdp4GBv7hgHTa+aLas0j5n+gXDQHE7Ym6T+o2gCBjx5kXAp6bFKYdBo+0ucK6PgX13D/R+gd81RO0CSx6NqQVnWN3T+Y5DyELuQROqJ1PoZab41dyBSNYXQ5HRIDP0yNvRVA1GoHq0I1x8IWKZEwzrPqZl7GWpjseCyGvV63Qg+5oG9+TUQT6Bdl3CrQeuENDCmbDxKNVfoUgQdo36g0JutBOwIDAQAB
+          alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvT86vZaG6B2E4yGCzclq8rOdWpaYuPPYOYzHQ2258vDeH+1yTPq45a6N3NLjc9Z/K2lJHH745qPGnu5LDdlcIofdujG8QNvFZif/inTXcU3/HV/NNezH0oi9WAgd0b0QWjKizZn8Xur3nSTuKpNItBnt4+HbEm1lQkhBEuj7usgutsFhWEbm1BHpXHrFdok5gMSONfSaH/EC7KcmA9pNLrBubLLg8+8GqXR14MB+sE1YXSALV44mP3+mbUFVOx6VruQ3yG8cwmBzSiCEpvetTFQ23pMY7iygMckbgw/OSo63HC0/3u4hG0KlUp6WNaNmwjsmcfwdvw+/0VnBgVy5SQIDAQAB
+          notifyIp: http://47.106.177.107/
+
+    JPush:
+         appKey: 6b9d39c17d861c1ad17d6f56
+         masterSecret: d04a7cc37d05fccc58cec1da
+         
+    WyIm:
+         appKey: a94297f610e1fef47c757cabc4025af6
+         appSecret: 7e2e5e6a9214
+         registerURL: https://api.netease.im/nimserver/user/create.action
+         updateURL: https://api.netease.im/nimserver/user/update.action
+         refreshTokenURL: https://api.netease.im/nimserver/user/refreshToken.action
+         getURL: https://api.netease.im/nimserver/user/getUinfos.action
+         updateUinfoURL: https://api.netease.im/nimserver/user/updateUinfo.action
+
+linxi:
+          accessTokenURL: http://47.106.177.107/linxi/oauth/token
+          applayCoefficient: 0.094
+
+
+
+
+
+
+
+
+
+
+
+    
+
+     
+    
+
+
+
+    
+ 
