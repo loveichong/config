@@ -90,6 +90,8 @@ module:
          refreshTokenURL: https://api.netease.im/nimserver/user/refreshToken.action
          getURL: https://api.netease.im/nimserver/user/getUinfos.action
          updateUinfoURL: https://api.netease.im/nimserver/user/updateUinfo.action
+         chatRoomCreateURL: https://api.netease.im/nimserver/chatroom/create.action
+         getRoomInfoURL: https://api.netease.im/nimserver/chatroom/get.action
 
 linxi:
           accessTokenURL: http://47.106.177.107/linxi/oauth/token
